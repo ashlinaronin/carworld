@@ -6,11 +6,37 @@
 
     $app->get('/', function() {
         return "<h1>Who goes there?!</h1>
-            <h3><a href='/carworld'>Please visit CarWorld</a></h3>
+            <h3><a href='/carworld-search'>Please visit CarWorld</a></h3>
         ";
     });
 
-    $app->get('/carworld', function() {
+    $app->get('/carworld-search', function() {
+        return "<html>
+                    <head>
+                        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+                        <title>Find a Car</title>
+                    </head>
+                      <body>
+                        <div class='container'>
+                          <h1>Find a Car</h1>
+                          <form  action='/carworld-results' method='get'>
+                            <div class='form-group'>
+                              <label for='price'>Enter Maximum Price</label>
+                              <input type='number' name='price' id='price' class='form-control'>
+                            </div>
+                            <div class='form-group'>
+                                <label for='miles'>Enter Maximum Miles</label>
+                                <input type='number' name='miles' id='miles' class='form-control'>
+                            </div>
+                            <button name='submit' class='btn btn-success'>Submit</button>
+                          </form>
+                        </div>
+                      </body>
+                </html>";
+    });
+
+
+    $app->get('/carworld-results', function() {
         setlocale(LC_MONETARY, 'en_US'); // Adds location info for money format
 
         $smartcar = new Car("2017 Smartcar", 65000, 180000, "images/smartcar.jpg");
