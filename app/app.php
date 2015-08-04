@@ -41,7 +41,7 @@
 
         $smartcar = new Car("2017 Smartcar", 65000, 180000, "images/smartcar.jpg");
         $semitruck = new Car("1939 BigTruck", 60, 100, "images/semi.jpg");
-        $segway = new Car("2009 Paul Blart", 12000, 3, "images/segway.jpg");
+        $segway = new Car("2009 Paul Blart", 12000, 3, "images/segway.gif");
         $tonka = new Car ("2000 Dumptruck", 3, 15, "images/tonka.jpg");
 
         $cars = array($smartcar, $semitruck, $segway, $tonka);
@@ -56,11 +56,11 @@
         $output = "<html>
                     <head>
                         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
-                        <title>Your Car Dealership's Homepage</title>
+                        <title>CarWorld</title>
                     </head>
                     <body>
                         <div class='container'>
-                            <h1>Your Car Dealership</h1>
+                            <h1>Welcome to Car World How Can I Help You</h1>
                             <ul>";
 
         if (!empty($cars_matching_search)){
